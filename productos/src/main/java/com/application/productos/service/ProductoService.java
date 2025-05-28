@@ -8,7 +8,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class ProductoService {
@@ -28,7 +27,7 @@ public class ProductoService {
         return productoRepository.save(producto);
     }
 
-    public Producto obtenerPorId(UUID id) throws ChangeSetPersister.NotFoundException {
+    public Producto obtenerPorId(int id) throws ChangeSetPersister.NotFoundException {
         return productoRepository.findById(id).orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 

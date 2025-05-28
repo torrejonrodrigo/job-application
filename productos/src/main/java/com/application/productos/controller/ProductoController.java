@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/productos")
@@ -27,7 +26,7 @@ public class ProductoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Producto> obtenerProducto(@PathVariable UUID id) throws ChangeSetPersister.NotFoundException {
+    public ResponseEntity<Producto> obtenerProducto(@PathVariable int id) throws ChangeSetPersister.NotFoundException {
         return ResponseEntity.ok(productoService.obtenerPorId(id));
     }
 

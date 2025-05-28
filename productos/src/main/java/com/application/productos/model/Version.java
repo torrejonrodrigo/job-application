@@ -4,15 +4,13 @@ import lombok.Data;
 import jakarta.persistence.*;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
-import java.util.UUID;
-
 
 @Data
 @Entity(name = "`version`")
 public class Version {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "producto_id", nullable = false)
