@@ -39,4 +39,4 @@ COPY wait-for-it.sh /usr/local/bin/wait-for-it
 RUN chmod +x /usr/local/bin/wait-for-it
 
 # Command to run the application
-ENTRYPOINT ["wait-for-it","postgres:5432", "--","java", "-jar", "app.jar"]
+ENTRYPOINT ["wait-for-it", "postgres:5432", "--timeout=30", "--strict", "--", "java", "-jar", "app.jar"]

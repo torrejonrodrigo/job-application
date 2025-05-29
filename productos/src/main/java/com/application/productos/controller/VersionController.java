@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/productos/{productoId}/versiones")
 @Tag(name = "Version API")
+@CrossOrigin
 public class VersionController {
     @Autowired
     private VersionService versionService;

@@ -3,11 +3,13 @@ package com.application.productos.model;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Size;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,4 +23,10 @@ public class Producto {
     @Size(max = 255)
     private String descripcion;
 
+    // Constructor for testing
+    public Producto(int id, String nombre, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
 }

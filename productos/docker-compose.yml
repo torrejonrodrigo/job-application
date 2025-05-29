@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:15
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: productos
       POSTGRES_USER: user
       POSTGRES_PASSWORD: root
     ports:
@@ -13,4 +13,6 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
-    entrypoint: ["wait-for-it", "postgres:5432", "--", "java", "-jar", "app.jar"]
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    entrypoint: ["wait-for-it", "postgres:5432", "--timeout=30", "--strict", "--", "java", "-jar", "app.jar"]
