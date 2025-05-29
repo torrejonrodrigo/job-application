@@ -1,6 +1,8 @@
 Job Application Rodrigo Torrejón
 
-instrucciones clonación
+Instrucciones BD:
+No fue posible dockerizar la BD. Utilizar db-script.sql ubicado en la raíz.
 
-Evidencia swagger
-Evidencia de jacoco 
+Evidencias swagger y jacoco se encuentran en la raiz. 
+
+http://localhost:8080/swagger-ui/index.html
